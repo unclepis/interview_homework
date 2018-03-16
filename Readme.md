@@ -33,9 +33,22 @@
    2. scss 
    
    － 因为需要做设备自适应，所以主要使用scss提供的变量可以对默认参数进行存储，放置多处掉用
-   － 使用了scss提供的函数，对1200px像素下的ucd设计图做rem的转换，然后在不同分辨率下通过js文件修改rem的基数，以便自适应
+  
+  ```
+   $defaultTextColor:#fff default!;
+  ```
+  
+  － 使用了scss提供的函数，对1200px像素下的ucd设计图做rem的转换，然后在不同分辨率下通过js文件修改rem的基数，以便自适应
+  
+  ```
+   @function px2rem($px){
+      $rem = 1400/100;  // ucd图纸在1400px图纸下进行的标注
+      @return($px/$rem)+'rem' // 将px转换成了rem
+   }
+   然后通过resize时间添加addeventlistener或者ie下attachEvent对resize事件做监听，然后根据可视区大小计算出html的font-size，也就是rem的值，控制界面自适应
+  ```
 
-   3. fonticon
+   3. fonticon字体库
 
    - 图标全是使用homework提供的fonticon，也是通过url－loader让webpack打包处理；
    - 引用方式：icon icon－xxx和通过伪元素after的content属性加载
