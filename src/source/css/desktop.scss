@@ -20,7 +20,7 @@ header{ // cruise表头
     // 登陆的logo和下啦菜单
     .headerLogin{
         position: absolute;
-        right: px2rem(80);
+        right: px2rem(10);
         height: 100%;
         display: flex;
         justify-content: center;
@@ -42,8 +42,7 @@ header{ // cruise表头
  main{
     flex: 1 1 px2rem(15);
     display: flex;
-    margin: 0 px2rem(65);
-    width: px2rem(586);
+    width: 100%;
     aside{
         width: px2rem(135);
         background-color: #2D4054;
@@ -95,8 +94,8 @@ header{ // cruise表头
                 margin-top:px2rem(3);
                 margin-bottom:px2rem(3);
                 white-space: nowrap;
-                text-overflow: ellipsis;
                 overflow: hidden;
+                text-overflow: ellipsis;
                 width: 100%;
                 text-align: justify;
                 &:hover{
@@ -108,20 +107,19 @@ header{ // cruise表头
 
     // 进度主图
     section{
-        margin-left:px2rem(8);
-        width: px2rem(435);
-        box-sizing: border-box;
+        margin:px2rem(8);
+        width: 100%;
         display: flex;
-        overflow: hidden;
         flex-flow: column nowrap;
         justify-content: space-between;
         
         //表头的三个panel
         .infoHeader{
+            flex:auto;
             display: flex;
             justify-content: space-between;
             height: px2rem(58);
-            width: px2rem(435);
+            width: 100%;
             span{
                 display: inline-block;
             }
@@ -131,6 +129,7 @@ header{ // cruise表头
                 height: 100%;
             }
             .buildingPanel{
+                flex: auto;
                 color:#f3f3f3;
                 background-color: #FF9A2A;
                 text-align: center;
@@ -165,6 +164,7 @@ header{ // cruise表头
                 }
             }
             .idlePanel{
+                flex:auto;
                 color:#f3f3f3;
                 display: flex;
                 justify-content: space-between;
@@ -194,13 +194,14 @@ header{ // cruise表头
             }
 
             .totalPanel{
+                flex: auto;
                 color:#000;
                 display: flex;
-                flex-flow: column nowrap;
                 justify-content: space-around;
                 background-color: #fff;
                 .totalTitle{
                     display: flex;
+                    flex-flow: column nowrap;
                     justify-content: space-around;
                     span{
                         display: inline-block;
@@ -211,6 +212,7 @@ header{ // cruise表头
                 }
                 .totalNumber{
                     display: flex;
+                    flex-flow: column nowrap;
                     justify-content: space-around;
                     span{
                         text-align: center;
@@ -225,6 +227,7 @@ header{ // cruise表头
            .infoFilter{
                margin-top: px2rem(8);
             ul{
+                display: flex;
                 line-height: px2rem(25);
                 height: px2rem(25);
                 background-color: #E1E4E6;
@@ -242,6 +245,7 @@ header{ // cruise表头
                     }
                 }
                 .searchContainer{
+                    flex: auto;
                     position: relative;
                     width:px2rem(300);
                 }
@@ -309,7 +313,7 @@ header{ // cruise表头
                     // logo公共样式
                     @mixin logoStyle($url){
                         display:inline-block;
-                        width: px2rem(40);
+                        width: 7%;
                         height: px2rem(40);
                         background: url($url);
                         background-size: 100% 100%;
@@ -337,7 +341,7 @@ header{ // cruise表头
                         display:inline-block;
                         position:absolute;
                         height:100%;
-                        width:px2rem(390);
+                        width:93%;
                         .infoBlock{
                             margin-left:px2rem(10);
                         }
@@ -420,42 +424,5 @@ header{ // cruise表头
                     }
                 }
             }
-    }
-}
-
-// popup 
-.popupContainer{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    width: px2rem(285);
-    height: px2rem(80);
-    border: 1px solid #00b4CF;
-    .close{
-        align-self: flex-end;
-        color: #00b4cf;
-    }
-    .addMsg{
-        color:#2d4054;
-        margin-left:px2rem(10);
-    }
-    .addInput{
-        align-self: stretch;
-        margin-left:px2rem(10);
-        margin-right:px2rem(10);
-    }
-    .popupButton{
-        display: flex;
-        margin-left: px2rem(10);
-        .addButton{
-            background-color: #00b4CF;
-            color:#f3f3f3;
-        }
-        .cancelButton{
-            margin-left: px2rem(10);
-            background-color: #2d4054;
-            color:#f3f3f3;
-        }
     }
 }

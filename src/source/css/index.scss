@@ -3,10 +3,9 @@
 
 // 引入fonticon字体库
 @import "../../fonts-icons/fonts.css";
-
 // 定义默认参数
 $defaultTextColor:#2D4054;
-$defaultTextHoverColor:#0084CF;
+$defaultTextHoverColor:#00B4CF;
 $fontSize:14px !default;
 
 // 使用函数动态的将ucd上的px换成rem实现自适应布局
@@ -15,343 +14,36 @@ $fontSize:14px !default;
     @return ($px/$rem) + rem;
 }
 
+// 媒体查询
+@media screen  and (min-width:1200px){
+    @import './desktop_hd.scss';
+}
+
+@media screen  and (min-width:1024px) and (max-width:1199px){
+    @import './desktop.scss';
+}
+
+@media screen  and (min-width:769px) and (max-width:1023px){
+    @import './tablet.scss';
+}
+
+@media screen  and (max-width:768px){
+    @import './phone.scss';
+}
+
+
+
 // 设置html和body全屏幕
 html,body{
     height: 100%;
     width: 100%;
-    
+    color:$defaultTextColor;
     .container{ // 整个页面的container
         display: flex;
         flex-flow: column nowrap;
         height: 100%;
         width: 100%;
         background-color: #E1E4E6;
-    
-        header{ // cruise表头
-            flex: 0 1 px2rem(35);
-            width: 100%;
-            height:px2rem(35);
-            background-color: #f3f3f3;
-            display: flex;
-            align-items: center;
-    
-            // 标头中间的svg图表
-            .logoSvg{
-                height:px2rem(21);
-                width: px2rem(50);
-                display: block;
-                margin: auto;
-                background: url('../../logo/logo.svg');
-                background-size: 100% 100%;
-            }
-    
-            // 登陆的logo和下啦菜单
-            .headerLogin{
-                display: flex;
-                align-items: center;
-                height: 100%;
-                margin-right:px2rem(65);
-            }
-
-            .loginPic{
-                height: px2rem(20);
-                width: px2rem(20);
-                border-radius: px2rem(10);
-                background: url('../img/login.png');
-                background-size: 100% 100%;
-                margin-right:px2rem(7.5);
-            }
-        }
-
-        // 主体部分，左侧aside是导航，右侧是人物显示
-        main{
-            flex: 1 1 px2rem(15);
-            display: flex;
-            margin: 0 px2rem(65);
-            width: px2rem(586);
-            aside{
-                width: px2rem(135);
-                background-color: #2D4054;
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: space-between;
-            
-                .aside-nav {
-                    margin-top: px2rem(7.5);
-                    li{
-                        height: px2rem(22.5);
-                        line-height: px2rem(22.5);
-                        color:#ccc;
-                        padding-left:px2rem(15);
-                        span{
-                            height: 100%;
-                            line-height: 100%;
-                        }
-                        .icon{
-                            margin-right:px2rem(7.5);
-                            font-size: px2rem(10);
-                        }
-                         &:hover{
-                            background-color: #435466;
-                            color:#00B4CF;
-                        }
-                    }
-                }
-
-                // 历史纪录 text-overflow:ellipise省略号
-                .aside-list{
-                    padding: 0 px2rem(7.5);
-                    span{
-                        font-size: px2rem(12);
-                        color:#ccc;
-                        margin-left: px2rem(5);
-                    }
-                     ul{
-                        list-style-type: disc;
-                        padding:px2rem(3);
-                     }
-                    li{
-                        list-style-type: disc;
-                        font-size: px2rem(6);
-                        color:#999;
-                        height: px2rem(9);
-                        line-height: px2rem(9);
-                        padding-left: px2rem(3);
-                        margin-top:px2rem(3);
-                        margin-bottom:px2rem(3);
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        width: 100%;
-                        text-align: justify;
-                        &:hover{
-                            color:#00B4CF;
-                        }
-                    }
-                }
-            }
-
-            // 进度主图
-            section{
-                margin-left:px2rem(8);
-                width: px2rem(435);
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: space-between;
-                
-                //表头的三个panel
-                .infoHeader{
-                    display: flex;
-                    justify-content: space-between;
-                    height: px2rem(58);
-                    width: px2rem(435);
-                    span{
-                        display: inline-block;
-                    }
-                    div{
-                        display: inline-block;
-                        width: px2rem(135);
-                        height: 100%;
-                    }
-                    .buildingPanel{
-                        color:#f3f3f3;
-                        background-color: #FF9A2A;
-                        text-align: center;
-                        display: flex;
-                        justify-content: space-between;
-                        .buildingText{
-                            font-size: px2rem(12);
-                            padding-top: px2rem(12);
-                            font-weight: bold;
-                        }
-                        .buildingCount{
-                            font-size: px2rem(24);
-                            align-self: flex-end;
-                            margin:0 px2rem(7.5) px2rem(7.5) 0;
-                        }
-                    }
-                    .buildingLogo{
-                        flex:auto;
-                        &::after{
-                            height:100%;
-                            width:100%;
-                            font-family:"cruise";
-                            content:"\f013";
-                            font-size: px2rem(42);
-                            color:#f3f3f3;
-                            opacity: .2;
-                        }
-                    }
-                    .idlePanel{
-                        color:#f3f3f3;
-                        display: flex;
-                        justify-content: space-between;
-                        text-align: center;
-                        background-color:#7FBC39;
-                        .idleText{
-                            font-size: px2rem(12);
-                            padding-top: px2rem(12);
-                            font-weight: bold;
-                        }
-                        .idleLogo{
-                            &::after{
-                                font-family:"cruise";
-                                content:"\f0f4";
-                                font-size: px2rem(42);
-                                opacity: .2;
-                                height: 100%;
-                                line-height: 100%;
-                                color:#f3f3f3;
-                            }
-                        }
-                        .idleCount{
-                            font-size: px2rem(24);
-                            align-self: flex-end;
-                            margin:0 px2rem(7.5) px2rem(7.5) 0;
-                        }
-                    }
-
-                    .totalPanel{
-                        color:#000;
-                        display: flex;
-                        flex-flow: column nowrap;
-                        justify-content: space-around;
-                        background-color: #fff;
-                        .totalTitle{
-                            display: flex;
-                            justify-content: space-around;
-                            span{
-                                display: inline-block;
-                                width: px2rem(28);
-                                font-size:px2rem(6);
-                                text-align: center;
-                            }
-                        }
-                        .totalNumber{
-                            display: flex;
-                            justify-content: space-around;
-                            span{
-                                text-align: center;
-                                display: inline-block;
-                                width: px2rem(28);
-                                font-size: px2rem(10);
-                            }
-                        }
-                    }
-                }
-                   // 条件过滤panel
-                   .infoFilter{
-                       margin-top: px2rem(8);
-                    ul{
-                        line-height: px2rem(25);
-                        height: px2rem(25);
-                        background-color: #E1E4E6;
-                        li{
-                            font-size: px2rem(7);
-                            text-align: center;
-                            display: inline-block;
-                            width: px2rem(42);
-                            margin-right: 0;
-                            background-color: #f3f3f3;
-                            span{
-                                &:hover{
-                                    color:#00b4cf;
-                                }
-                            }
-                        }
-                        .searchContainer{
-                            position: relative;
-                            width:px2rem(300);
-                        }
-                    }
-
-                    .activeLi{
-                        border-bottom:3px solid #00B4CF;
-                    }
-                    .searchContainer{
-                        display: inline-block;
-                    }
-                    .searchFilter{
-                        position: absolute;
-                        left:px2rem(15);
-                    }
-                    .searchInput{
-                        height: px2rem(12);
-                        width: px2rem(86);
-                        background-color: #e3e1e4;
-                        outline: none;
-                    }
-                    .searchIcon{
-                        position: absolute;
-                        left:px2rem(5);
-                        &::after{
-                            font-family:"cruise";
-                            font-size:px2rem(10);
-                            content:'\f002';
-                        }
-                    }
-
-                    .cardIcon{
-                        position: absolute;
-                        right:px2rem(32);
-                        &::after{
-                            font-family:"cruise";
-                            font-size:px2rem(10);
-                            content:'\f00a';
-                        }
-                    }
-
-                    .listIcon{
-                        position: absolute;
-                        right:px2rem(13);
-                        &::after{
-                            font-family:"cruise";
-                            font-size:px2rem(8);
-                            content:'\f00b';
-                        }
-                    }
-                    .clear::after{
-                        display: block;
-                        content: '.';
-                        visibility: hidden;
-                    }
-                    
-                }
-                    // 进度
-                    .mainSection{
-                        border: 1px dashed;
-                        width: 100%;
-                        display: flex;
-                        flex-flow: column nowrap;
-                        margin-top: px2rem(8);
-                        .sectionItem{
-                            height: px2rem(54);
-                            background-color: #f3f3f3;
-                            margin-bottom:px2rem(10);
-                            div{
-                                height: px2rem(40);
-                                width: px2rem(40);
-                            }
-                            .windowLogo{
-                                background: url('../img/windows.png');
-                            }
-                            .ubuntuLogo{
-                                background: url('../img/ubuntu.png');
-                            }
-                            .debinLogo{
-                                background: url('../img/debin.png');
-                            }
-                            .suseLogo{
-                                background: url('../img/suse.png');
-                            }
-                            .centLogo{
-                                background: url('../img/cent_os.png');
-                            }
-                        }
-                       
-                    }
-            }
-        }
-
         footer{
             text-align: center;
             height: px2rem(15);
@@ -361,6 +53,70 @@ html,body{
             background-color: #fff;
             font-size: px2rem(7);
         }
+    }
+}
+
+// 设置登陆的下拉菜单
+.iconAngelDown{
+    align-self: center;
+    &::after{
+        font-family:"cruise";
+        content:"\f107";
+        font-size: px2rem(8);
+        height: 100%;
+        line-height: 100%;
+        color:#435466;
+    }
+    li{
+        &:hover{
+            background-color: #efefef;
+        }
+    }
+    span{
+        &:hover{
+            color:$defaultTextHoverColor;
+        }
+    }
+    .userFile{
+        &::after{
+            font-family:"cruise";
+            content:"\f2c3";
+            font-size: px2rem(8);
+            height: 100%;
+            line-height: 100%;
+            color:#435466;
+        }
+    }
+
+    .logout{
+        &::after{
+            font-family:"cruise";
+            content:"\f090";
+            font-size: px2rem(8);
+            height: 100%;
+            line-height: 100%;
+            color:#435466;
+        }
+    }
+}
+
+.login{
+    position: absolute;
+    width: px2rem(60);
+    height: px2rem(30);
+    box-shadow: 1px 1px 2px;
+    top: px2rem(20);
+    right: px2rem(1.5);
+    background-color: #fff;
+    z-index: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    li{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
     }
 }
 

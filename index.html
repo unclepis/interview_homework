@@ -11,10 +11,23 @@
 <body>
     <div class="container">
         <header>
-            <div class='logoSvg'></div>
-            <div class="headerLogin">
-                <div class="loginPic"></div>
-                <div class="icon icon-angle-down"></div>
+            <div class="asideShow"></div>
+            <div class='logoSvg'>
+                <div class="headerLogin">
+                    <span class="loginPic"></span>
+                    <span class="iconAngelDown">
+                        <ul class="login" id="loginActionDom">
+                            <li>
+                                <i class="userFile"></i>
+                                <span>Profile</span>
+                            </li>
+                            <li>
+                                <i class="logout"></i>
+                                <span>Sign Out</span>
+                            </li>
+                        </ul>
+                    </span>
+                </div>
             </div>
         </header>
         <main>
@@ -113,21 +126,295 @@
                 <div class="mainSection">
                     <div class="sectionItem">
                         <div class="windowLogo"></div>
+                        <div class="sectionDetails">
+                            <div class="sectionInfo">
+                                <span class="infoBlock">
+                                    <span class="desktopIcon"></span>
+                                    <span class="taskName">
+                                        bjstdmnbgbr08.thoughtworks.com
+                                    </span>
+                                </span>
+                                <span class="infoBlock taskStatus">
+                                    building
+                                </span>
+                                <span class="infoBlock">
+                                    <span class="hintIcon"></span>
+                                    <span class="hostIp">192.168.1.243</span>
+                                </span>
+
+                                <span class="infoBlock">
+                                    <span class="folderIcon"></span>
+                                    <span class="taskPath">/var/lib/cruise-agent</span>
+                                </span>
+                            </div>
+                            <div class="sectionOperation">
+                                <span class="infoBlock addIcon"></span>
+                                <span class="infoBlock operationbg firefox" id="FireFox0" onclick="removeCurrent('FireFox0')">
+                                    FireFox
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg sarafi" id="Sarafi0" onclick="removeCurrent('Sarafi0')">
+                                    Sarafi
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg ubuntu" id="Ubuntu0" onclick="removeCurrent('Ubuntu0')">
+                                    Ubuntu
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg chrome" id="Chrome0" onclick="removeCurrent('Chrome0')">
+                                    Chrome
+                                    <span class="deleteIcon"></span>
+                                </span>
+
+                                <button class="denyButton">
+                                    <i class="denyIcon"></i>Deny
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div class="sectionItem">
                         <div class="windowLogo"></div>
+                        <div class="sectionDetails">
+                            <div class="sectionInfo">
+                                <span class="infoBlock">
+                                    <span class="desktopIcon"></span>
+                                    <span class="taskName">
+                                        bjstdmnbgbr08.thoughtworks.com
+                                    </span>
+                                </span>
+                                <span class="infoBlock taskStatus">
+                                    building
+                                </span>
+                                <span class="infoBlock">
+                                    <span class="hintIcon"></span>
+                                    <span class="hostIp">192.168.1.243</span>
+                                </span>
+
+                                <span class="infoBlock">
+                                    <span class="folderIcon"></span>
+                                    <span class="taskPath">/var/lib/cruise-agent</span>
+                                </span>
+                            </div>
+                            <div class="sectionOperation">
+                                <span class="infoBlock addIcon"></span>
+                                <span class="infoBlock operationbg firefox" id="FireFox1" onclick="removeCurrent('FireFox1')">
+                                    FireFox
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg sarafi" id="Sarafi1" onclick="removeCurrent('Sarafi1')">
+                                    Sarafi
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg ubuntu" id="Ubuntu1" onclick="removeCurrent('Ubuntu1')">
+                                    Ubuntu
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg chrome" id="Chrome1" onclick="removeCurrent('Chrome1')">
+                                    Chrome
+                                    <span class="deleteIcon"></span>
+                                </span>
+
+                                <button class="denyButton">
+                                    <i class="denyIcon"></i>Deny
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div class="sectionItem">
                         <div class="ubuntuLogo"></div>
+                        <div class="sectionDetails">
+                            <div class="sectionInfo">
+                                <span class="infoBlock">
+                                    <span class="desktopIcon"></span>
+                                    <span class="taskName">
+                                        bjstdmnbgbr08.thoughtworks.com
+                                    </span>
+                                </span>
+                                <span class="infoBlock taskStatus">
+                                    building
+                                </span>
+                                <span class="infoBlock">
+                                    <span class="hintIcon"></span>
+                                    <span class="hostIp">192.168.1.243</span>
+                                </span>
+
+                                <span class="infoBlock">
+                                    <span class="folderIcon"></span>
+                                    <span class="taskPath">/var/lib/cruise-agent</span>
+                                </span>
+                            </div>
+                            <div class="sectionOperation">
+                                <span class="infoBlock addIcon"></span>
+                                <span class="infoBlock operationbg firefox" id="FireFox2" onclick="removeCurrent('FireFox2')">
+                                    FireFox
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg sarafi" id="Sarafi2" onclick="removeCurrent('Sarafi2')">
+                                    Sarafi
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg ubuntu" id="Ubuntu2" onclick="removeCurrent('Ubuntu2')">
+                                    Ubuntu
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg chrome" id="Chrome2" onclick="removeCurrent('Chrome2')">
+                                    Chrome
+                                    <span class="deleteIcon"></span>
+                                </span>
+
+                                <button class="denyButton">
+                                    <i class="denyIcon"></i>Deny
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div class="sectionItem">
                         <div class="debinLogo"></div>
+                        <div class="sectionDetails">
+                            <div class="sectionInfo">
+                                <span class="infoBlock">
+                                    <span class="desktopIcon"></span>
+                                    <span class="taskName">
+                                        bjstdmnbgbr08.thoughtworks.com
+                                    </span>
+                                </span>
+                                <span class="infoBlock taskStatus">
+                                    building
+                                </span>
+                                <span class="infoBlock">
+                                    <span class="hintIcon"></span>
+                                    <span class="hostIp">192.168.1.243</span>
+                                </span>
+
+                                <span class="infoBlock">
+                                    <span class="folderIcon"></span>
+                                    <span class="taskPath">/var/lib/cruise-agent</span>
+                                </span>
+                            </div>
+                            <div class="sectionOperation">
+                                <span class="infoBlock addIcon"></span>
+                                <span class="infoBlock operationbg firefox" id="FireFox3" onclick="removeCurrent('FireFox3')">
+                                    FireFox
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg sarafi" id="Sarafi3" onclick="removeCurrent('Sarafi3')">
+                                    Sarafi
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg ubuntu" id="Ubuntu3" onclick="removeCurrent('Ubuntu3')">
+                                    Ubuntu
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg chrome" id="Chrome3" onclick="removeCurrent('Chrome3')">
+                                    Chrome
+                                    <span class="deleteIcon"></span>
+                                </span>
+
+                                <button class="denyButton">
+                                    <i class="denyIcon"></i>Deny
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div class="sectionItem">
                         <div class="suseLogo"></div>
+                        <div class="sectionDetails">
+                            <div class="sectionInfo">
+                                <span class="infoBlock">
+                                    <span class="desktopIcon"></span>
+                                    <span class="taskName">
+                                        bjstdmnbgbr08.thoughtworks.com
+                                    </span>
+                                </span>
+                                <span class="infoBlock taskStatus">
+                                    building
+                                </span>
+                                <span class="infoBlock">
+                                    <span class="hintIcon"></span>
+                                    <span class="hostIp">192.168.1.243</span>
+                                </span>
+
+                                <span class="infoBlock">
+                                    <span class="folderIcon"></span>
+                                    <span class="taskPath">/var/lib/cruise-agent</span>
+                                </span>
+                            </div>
+                            <div class="sectionOperation">
+                                <span class="infoBlock addIcon"></span>
+                                <span class="infoBlock operationbg firefox" id="FireFox4" onclick="removeCurrent('FireFox4')">
+                                    FireFox
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg sarafi" id="Sarafi4" onclick="removeCurrent('Sarafi4')">
+                                    Sarafi
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg ubuntu" id="Ubuntu4" onclick="removeCurrent('Ubuntu4')">
+                                    Ubuntu
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg chrome" id="Chrome4" onclick="removeCurrent('Chrome4')">
+                                    Chrome
+                                    <span class="deleteIcon"></span>
+                                </span>
+
+                                <button class="denyButton">
+                                    <i class="denyIcon"></i>Deny
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div class="sectionItem">
                         <div class="centLogo"></div>
+                        <div class="sectionDetails">
+                            <div class="sectionInfo">
+                                <span class="infoBlock">
+                                    <span class="desktopIcon"></span>
+                                    <span class="taskName">
+                                        bjstdmnbgbr08.thoughtworks.com
+                                    </span>
+                                </span>
+                                <span class="infoBlock taskStatus">
+                                    building
+                                </span>
+                                <span class="infoBlock">
+                                    <span class="hintIcon"></span>
+                                    <span class="hostIp">192.168.1.243</span>
+                                </span>
+
+                                <span class="infoBlock">
+                                    <span class="folderIcon"></span>
+                                    <span class="taskPath">/var/lib/cruise-agent</span>
+                                </span>
+                            </div>
+                            <div class="sectionOperation">
+                                <span class="infoBlock addIcon"></span>
+                                <span class="infoBlock operationbg firefox" id="FireFox5" onclick="removeCurrent('FireFox5')">
+                                    FireFox
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg sarafi" id="Sarafi5" onclick="removeCurrent('Sarafi5')">
+                                    Sarafi
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg ubuntu" id="Ubuntu5" onclick="removeCurrent('Ubuntu5')">
+                                    Ubuntu
+                                    <span class="deleteIcon"></span>
+                                </span>
+                                <span class="infoBlock operationbg chrome" id="Chrome5" onclick="removeCurrent('Chrome5')">
+                                    Chrome
+                                    <span class="deleteIcon"></span>
+                                </span>
+
+                                <button class="denyButton">
+                                    <i class="denyIcon"></i>Deny
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="triangle-up">
+
                     </div>
                 </div>
             </section>
