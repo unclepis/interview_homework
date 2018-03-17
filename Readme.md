@@ -1,4 +1,17 @@
-# 项目说明
+# 项目说明 Throughworks interview homework 
+## 项目启动
+
+```
+    yarn install ; // 安装项目依赖
+    yarn run start ; // 在package中写的scripts脚本，通过webpack热加载监听文件变化，用于开发
+
+    在浏览器中打开跟路径下的index.html就可以访问
+```
+
+## webpack + ES6+ SCSS+ (REM,媒体查询media－query）
+## 要求：
+- 不能使用js框架和js库，所以用es6，使用webpack对es6语法babel转码es5
+- 主要还是使用scss和rem再加上媒体查询对不同设备做自适应布局
 
 ![Image text](https://github.com/unclepis/interview_homework/blob/master/src/source/img/Desktop%20HD.png)
 
@@ -81,11 +94,3 @@
     yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass
 ```
 
-### 项目启动
-
-```
-    yarn install ; // 安装项目依赖
-    yarn run start ; // 在package中写的scripts脚本，通过webpack热加载监听文件变化，用于开发
-
-    在浏览器中打开跟路径下的index.html就可以访问
-```
