@@ -1,6 +1,6 @@
 # 项目说明
 
-![Image text](./src/source/img/Desktop HD.png)
+![Image text](https://github.com/unclepis/interview_homework/blob/master/src/source/img/Desktop%20HD.png)
 
 ## 解决方案
 
